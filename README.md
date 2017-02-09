@@ -22,4 +22,4 @@ De esta lista elegir tres frameworks que consideramos adecuados.
 
 
 ### Pruebas:
-De los frameworks elegidos crear un archivo <nombre_framework>_test.html con la prueba.
+De los frameworks elegidos crear un archivo **nombre_framework**_test.html con la prueba.
