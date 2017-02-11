@@ -23,7 +23,7 @@ var gameOverSound;
 var plutoMusic;
 var musicEnabled = true;
 var button;
-
+var enemyFireRate = 2000;
 export default class extends Phaser.State {
 
   create () {
@@ -284,7 +284,7 @@ export default class extends Phaser.State {
         enemyBullet.reset(shooter.body.x, shooter.body.y);
 
         game.physics.arcade.moveToObject(enemyBullet,this.player,300); // 550 = bullet speed in milliseconds
-        firingTimer = game.time.now + 2000; //  2000 = fire ratio in milliseconds
+        firingTimer = game.time.now + enemyFireRate; //  2000 = fire ratio in milliseconds
       }
 
     }
@@ -336,12 +336,12 @@ export default class extends Phaser.State {
 
   }
 
-  // MP3 files are ready to use
+  //  MP3 files are ready to use
   soundSet() {
     plutoMusic.play();
   }
 
-  // Bullet vs. Bullet collision
+  //  Bullet vs. Bullet collision
   bulletCollisions (playerBullet, alienBullet) {
 
     //  Bullet hits another bullet
@@ -354,7 +354,8 @@ export default class extends Phaser.State {
     explosion.play('kaboom', 30, false, true);
     explosionSound.play();
   }
-
+  
+  //  Music button handler
   buttonClick() {
     if(musicEnabled) {
       plutoMusic.pause();
