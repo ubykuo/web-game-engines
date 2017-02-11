@@ -9,6 +9,8 @@
 - States
 - Score
 - Lives
+- Menu
+- Buttons
 
 
 ##Boilerplate installation instructions:
