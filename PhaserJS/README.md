@@ -1,3 +1,15 @@
+Spacer Invader game made with Phaser
+
+Features:
+
+-Animations
+-Music
+-Sound
+-Collisions
+-States
+-Score
+-Lives
+
 # Phaser + ES6 + Webpack.
 #### A bootstrap project to create games with Phaser + ES6 + Webpack.
 
