@@ -1,14 +1,16 @@
-Spacer Invader game made with Phaser
+#Spacer Invader game made with Phaser
 
 Features:
 
--Animations
--Music
--Sound
--Collisions
--States
--Score
--Lives
+###-Animations
+###-Music
+###-Sound
+###-Collisions
+###-States
+###-Score
+###-Lives
+
+##Boilerplate installation instructions:
 
 # Phaser + ES6 + Webpack.
 #### A bootstrap project to create games with Phaser + ES6 + Webpack.
@@ -31,12 +33,6 @@ To use this bootstrap you’ll need to install a few things before you have a wo
 
 ## 1. Clone this repo:
 
-Navigate into your workspace directory.
-
-Run:
-
-```git clone https://github.com/lean/phaser-es6-webpack.git```
-
 ## 2. Install node.js and npm:
 
 https://nodejs.org/en/
@@ -50,7 +46,7 @@ Run:
 
 ```npm install```
 
-## 4. Run the development server:
+## 3. Run the development server:
 
 Run:
 
@@ -70,10 +66,3 @@ Run:
 ```npm run deploy```
 
 This will optimize and minimize the compiled bundle.
-
-## Credits
-Big thanks to this great repos:
-
-https://github.com/belohlavek/phaser-es6-boilerplate
-
-https://github.com/cstuncsik/phaser-es6-demo
