@@ -23,3 +23,8 @@ De esta lista elegir tres frameworks que consideramos adecuados.
 
 ### Pruebas:
 De los frameworks elegidos crear un archivo **nombre_framework**_test.html con la prueba.
+
+### Recursos:
+* Thread de discusión: https://www.reddit.com/r/gamedev/comments/1tt3hz/what_html5_game_engine_you_recommend_me/
+* Implementaciones del juego Breakouts con distintos frameworks: https://github.com/city41/breakouts
+
