@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="14" height="9" tilewidth="16" tileheight="16" nextobjectid="171">
+ <tileset firstgid="1" name="tilemap" tilewidth="16" tileheight="16" tilecount="256" columns="16">
+  <image source="../image/tilemap.png" width="256" height="256"/>
+ </tileset>
+ <imagelayer name="Parallax_layer1">
+  <image source="../image/bio_bg.png" width="160" height="144"/>
+  <properties>
+   <property name="ratio" value="0.25"/>
+  </properties>
+ </imagelayer>
+ <layer name="edge tiles" width="14" height="9">
+  <data encoding="base64">
+   BAAAAAQAAABEAAAAUwAAAFMAAABTAAAAUwAAAFMAAABTAAAAUwAAAFMAAABTAAAAUwAAAEIAAAAEAAAABAAAAAIAAABhAAAAYgAAAGMAAABkAAAAZQAAAGEAAABiAAAAYwAAAGQAAABlAAAAMQAAAAIAAAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxAAAAAgAAAAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEAAAAEAAAABAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQAAAAQAAAAEAAAAJAAAABMAAAATAAAAEwAAABMAAAATAAAAEwAAABMAAAATAAAAEwAAABMAAAAiAAAA
+  </data>
+ </layer>
+ <objectgroup name="entities" offsetx="0.5" offsety="0">
+  <object id="1" name="Player" x="24.5" y="64" width="16" height="16"/>
+  <object id="165" name="FinalBoss" x="146" y="20.5" width="16" height="32"/>
+ </objectgroup>
+ <objectgroup color="#ff0000" name="collision layer" opacity="0.79">
+  <object id="33" x="0.666663" y="0" width="15.3333" height="144.5"/>
+  <object id="57" x="16" y="-11" width="31.1666" height="57.5"/>
+  <object id="60" x="16.2083" y="96.75" width="30.8333" height="50.25"/>
+  <object id="166" x="47.4167" y="-6" width="175.583" height="18.75"/>
+  <object id="167" x="46.7085" y="132.5" width="175.583" height="15.375"/>
+  <object id="168" x="212.709" y="-5.1875" width="19.7915" height="151.688"/>
+ </objectgroup>
+</map>
