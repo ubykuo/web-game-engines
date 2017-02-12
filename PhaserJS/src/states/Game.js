@@ -21,7 +21,9 @@ var explosionSound;
 var levelClearSound;
 var gameOverSound;
 var plutoMusic;
-
+var musicEnabled = true;
+var button;
+var enemyFireRate = 2000;
 export default class extends Phaser.State {
 
   create () {
@@ -30,6 +32,8 @@ export default class extends Phaser.State {
 
     //  The scrolling starfield background
     starfield = game.add.tileSprite(0, 0, 800, 600, 'starfield');
+    button = game.add.button(game.world.centerX + 300, 90, 'volumeon', this.buttonClick, this, 2, 1, 0);
+
 
     //  Our bullet group
     this.bullets = game.add.group();
@@ -55,6 +59,8 @@ export default class extends Phaser.State {
     this.player = game.add.sprite(400, 500, 'ship');
     this.player.anchor.setTo(0.5, 0.5);
     game.physics.enable(this.player, Phaser.Physics.ARCADE);
+    //  Collide with world bounds (left and right)
+    this.player.body.collideWorldBounds = true;
 
     //  The baddies!
     this.aliens = game.add.group();
@@ -79,16 +85,16 @@ export default class extends Phaser.State {
     //  Sounds
     explosionSound = game.add.audio('explosion');
     levelClearSound = game.add.audio('levelclear');
-    gameOverSound = game.add.audio('gameover');
-    plutoMusic = game.add.audio('pluto');
+    gameOverSound = game.add.audio('gameover',1,true); 
+    plutoMusic = game.add.audio('pluto',1,true);
 
-
+    // We have to decode the sounds first, since they are MP3 encoded
     game.sound.setDecodedCallback([explosionSound, levelClearSound,gameOverSound, plutoMusic], this.soundSet, this);
 
     // Create 3 game lives
     for (var i = 0; i < 3; i++) 
     {
-      var ship = lives.create(game.world.width - 100 + (30 * i), 60, 'ship');
+      var ship = lives.create(game.world.width - 100 + (30 * i), 70, 'ship');
       ship.anchor.setTo(0.5, 0.5);
       ship.angle = 90;
       ship.alpha = 0.4;
@@ -278,7 +284,7 @@ export default class extends Phaser.State {
         enemyBullet.reset(shooter.body.x, shooter.body.y);
 
         game.physics.arcade.moveToObject(enemyBullet,this.player,300); // 550 = bullet speed in milliseconds
-        firingTimer = game.time.now + 2000; //  2000 = fire ratio in milliseconds
+        firingTimer = game.time.now + enemyFireRate; //  2000 = fire ratio in milliseconds
       }
 
     }
@@ -330,12 +336,12 @@ export default class extends Phaser.State {
 
   }
 
-  // MP3 files are ready to use
+  //  MP3 files are ready to use
   soundSet() {
     plutoMusic.play();
   }
 
-  // Bullet vs. Bullet collision
+  //  Bullet vs. Bullet collision
   bulletCollisions (playerBullet, alienBullet) {
 
     //  Bullet hits another bullet
@@ -347,6 +353,17 @@ export default class extends Phaser.State {
     explosion.reset(playerBullet.body.x, playerBullet.body.y);
     explosion.play('kaboom', 30, false, true);
     explosionSound.play();
+  }
+  
+  //  Music button handler
+  buttonClick() {
+    if(musicEnabled) {
+      plutoMusic.pause();
+      musicEnabled = false;
+    } else {
+      plutoMusic.resume();
+      musicEnabled = true;
+    }
   }
 }
 
