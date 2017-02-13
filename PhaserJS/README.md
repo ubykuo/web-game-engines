@@ -21,6 +21,7 @@
 - Easy to understand what the code does by just looking at it once 
 - No complex calculations or verbose stuff for most of the things
 - Simplicity
+- Great amount of official tutorials (685 approx) and big community/forums
 - Default physics modes: Arcade, Ninja and P2 (advanced physics)
 - Grouping (e.g:  you can create a group of Aliens and then for movement you move the Group itself, not alien by alien)
 - Easy to use animation/sprite engine 
@@ -44,7 +45,7 @@ game.add.button(400, 300, 90, 'volumeon', this.functionOnClick, this, 2, 1, 0)
  ```
 - Pool object engine (reusing objects instead of creating and deleting them, e.g; bullets, more performant)
 - Game main loading/drawing/updating every tick functions (in execution order: ```javascript init(), preload(), create(), update()```)
-- Easy to capture keystrokes and fire functions, everytime or just once (e.g: 
+- Easy key mapping engine and fire functions, everytime or just once (e.g: 
 ```javascript 
 game.input.onTap.addOnce(this.executeOnce,this))
 ```
