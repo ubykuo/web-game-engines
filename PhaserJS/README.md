@@ -45,7 +45,9 @@ game.add.button(400, 300, 90, 'volumeon', this.functionOnClick, this, 2, 1, 0)
 - Pool object engine (reusing objects instead of creating and deleting them, e.g; bullets, more performant)
 - Game main loading/drawing/updating every tick functions (in execution order: ```javascript init(), preload(), create(), update()```)
 - Easy to capture keystrokes and fire functions, everytime or just once (e.g: 
-```javascript game.input.onTap.addOnce(this.executeOnce,this)```)
+```javascript 
+game.input.onTap.addOnce(this.executeOnce,this))
+```
 
 ##CONS:
 
