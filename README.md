@@ -8,6 +8,7 @@ Realizar un Proof of Concept (pequeño ejemplo del funcionamiento del FW) evalua
 * Manejo de sonido
 * Manejo de graficos
 * Manejo de animaciones
+* Manejo de colisiones
 * Herramientas: herramientas disponibles para acelerar el ritmo de trabajo, como por ejemplo CLI (Command Line Interface), snippets de casos de uso comunes, clases con utilidades, etc.
 * Soporte: la comunidad que hay detrás de la librería/framework, es un factor importante a la hora de buscar soluciones para casos de uso comunes o workarounds a bugs.
 
@@ -16,13 +17,13 @@ Realizar un Proof of Concept (pequeño ejemplo del funcionamiento del FW) evalua
 De esta lista elegir tres frameworks que consideramos adecuados.
 
 * CreateJS
-* ThreeJS
+* KiwiJS
 * PandaJS
 * PhaserJS
 
 
 ### Pruebas:
-De los frameworks elegidos crear un archivo **nombre_framework**_test.html con la prueba.
+De los frameworks elegidos crear un directorio **nombre_framework/** con la prueba.
 
 ### Recursos:
 * Thread de discusión: https://www.reddit.com/r/gamedev/comments/1tt3hz/what_html5_game_engine_you_recommend_me/
