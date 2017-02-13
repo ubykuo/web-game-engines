@@ -34,7 +34,6 @@ export default class extends Phaser.State {
     starfield = game.add.tileSprite(0, 0, 800, 600, 'starfield');
     button = game.add.button(game.world.centerX + 300, 90, 'volumeon', this.buttonClick, this, 2, 1, 0);
 
-
     //  Our bullet group
     this.bullets = game.add.group();
     this.bullets.enableBody = true;
@@ -50,7 +49,7 @@ export default class extends Phaser.State {
     this.enemyBullets.enableBody = true;
     this.enemyBullets.physicsBodyType = Phaser.Physics.ARCADE;
     this.enemyBullets.createMultiple(30, 'enemyBullet');
-    this.enemyBullets.setAll('anchor.x', 0.5);
+    this.enemyBullets.setAll('anchor.x', 1);
     this.enemyBullets.setAll('anchor.y', 1);
     this.enemyBullets.setAll('outOfBoundsKill', true);
     this.enemyBullets.setAll('checkWorldBounds', true);
@@ -59,6 +58,7 @@ export default class extends Phaser.State {
     this.player = game.add.sprite(400, 500, 'ship');
     this.player.anchor.setTo(0.5, 0.5);
     game.physics.enable(this.player, Phaser.Physics.ARCADE);
+
     //  Collide with world bounds (left and right)
     this.player.body.collideWorldBounds = true;
 
@@ -154,9 +154,9 @@ export default class extends Phaser.State {
 
     createAliens () {
 
-      for (var y = 0; y < 4; y++)
+      for (var y = 0; y < 2; y++)
       {
-        for (var x = 0; x < 10; x++)
+        for (var x = 0; x < 1; x++)
         {
           var alien = this.aliens.create(x * 48, y * 50, 'invader');
           alien.anchor.setTo(0.5, 0.5);
@@ -221,9 +221,8 @@ export default class extends Phaser.State {
       levelClearSound.play();
       //the "click to restart" handler
       game.input.onTap.addOnce(this.restart,this);
-      }
-
     }
+  }
 
     enemyHitsPlayer (player,bullet) {
 
@@ -286,7 +285,6 @@ export default class extends Phaser.State {
         game.physics.arcade.moveToObject(enemyBullet,this.player,300); // 550 = bullet speed in milliseconds
         firingTimer = game.time.now + enemyFireRate; //  2000 = fire ratio in milliseconds
       }
-
     }
 
     fireBullet () {
@@ -306,7 +304,6 @@ export default class extends Phaser.State {
             bulletTime = game.time.now + 1000;// 1000 = fire rate in milliseconds
           }
         }
-
       }
 
       resetBullet (bullet) {
@@ -319,9 +316,9 @@ export default class extends Phaser.State {
   restart () {
 
     //  A new level starts
-    
+    levelClearSound.stop();
     gameOverSound.stop();
-    plutoMusic.play();
+    musicEnabled ? plutoMusic.play() : '';
 
     //  Resets the life count
     lives.callAll('revive');
