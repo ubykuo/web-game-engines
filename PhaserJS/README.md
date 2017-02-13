@@ -13,6 +13,45 @@
 - Buttons
 
 
+#Phaser:
+
+##PROS:
+
+- Uses PIXI WebGL rendering engine (fast)
+- Easy to understand what the code does by just looking at it once 
+- No complex calculations or verbose stuff for most of the things
+- Simplicity
+- Default physics modes: Arcade, Ninja and P2 (advanced physics)
+- Grouping (e.g:  you can create a group of Aliens and then for movement you move the Group itself, not alien by alien)
+- Easy to use animation/sprite engine 
+- Easy button creation and hook callbacks on click (e.g: 
+```javascript 
+game.add.button(400, 300, 90, 'volumeon', this.functionOnClick, this, 2, 1, 0)
+```
+- Easy sound and music engine
+- Easy to draw text onscreen- 
+- Easy to pause the whole engine/core (```game.pause = true```)
+- Easy state creation and change (e.g: game.state.add('Menu', GameState, false) - state.start('Menu'))
+- Easy collision engine (e.g:  
+```javascript
+//  We hook the collision event on the Bullet colliding with an Alien (firing collisionHandler function on overlap)
+  game.physics.arcade.overlap(this.bullet, this.alien, this.collisionHandler, null, this);
+ // We make the bullet and the alien disappear easily on collision
+   function collisionHandler(this.bullets, this.aliens) { 
+    this.bullet.kill(); 
+    this.aliens.kill();
+ }
+ ```
+- Pool object engine (reusing objects instead of creating and deleting them, e.g; bullets, more performant)
+- Game main loading/drawing/updating every tick functions (in execution order: ```javascript init(), preload(), create(), update()```)
+- Easy to capture keystrokes and fire functions, everytime or just once (e.g: 
+```javascript game.input.onTap.addOnce(this.executeOnce,this)```)
+
+##CONS:
+
+- Almost no 3D support
+
+
 ##Boilerplate installation instructions:
 
 # Phaser + ES6 + Webpack.
